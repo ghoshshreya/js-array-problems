@@ -1,18 +1,11 @@
 /*
- * Input [1,2,3,4,5,6], 4
- * Output [4,5,6,1,2,3]
+ * Input [1,2,3,4,5,6], 2
+ * Output [5,6,1,2,3,4]
  */
-function leftShiftByAnIndex(arr, index) {
-  const N = arr.length;
-  if (index <= N) {
-    const tempArr = [];
-    for (let x = 0; x < index - 1; x++) {
-      tempArr.push(arr.shift());
-    }
-    arr = [...arr, ...tempArr];
-  } else {
-    return 'Invalid Index';
-  }
-  return arr;
+function leftShiftByKElements(nums, k) {
+  let temp1 = nums.slice(0, nums.length - k); // 0, 4 -> 1,2,3,4
+  let temp2 = nums.slice(nums.length - k, nums.length); // 4,6 -> 5, 6
+  nums = [...temp2, ...temp1];
+  console.log(nums);
 }
-console.log(leftShiftByAnIndex([1, 2, 3, 4, 5, 6], 2));
+console.log('Hello', leftShiftByKElements([1, 2, 3, 4, 5, 6], 2));
