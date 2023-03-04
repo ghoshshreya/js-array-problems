@@ -7,6 +7,7 @@ import './easy/leftShiftByAnIndex.js';
 import './easy/pascalsTriangle.js';
 import './easy/sortArray.js';
 import './easy/stockbuysell.js';
+import './easy/twoSum.js';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
