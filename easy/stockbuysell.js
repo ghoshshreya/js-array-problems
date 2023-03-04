@@ -8,8 +8,7 @@ var maxProfit = function (prices) {
   let N = prices.length;
 
   // BASE CONDITIONS
-  if (N === 0) return 0;
-  if (N === 1) return prices[0];
+  if (N < 2) return 0;
 
   let buy = {
     day: 0,
@@ -44,4 +43,4 @@ var maxProfit = function (prices) {
   }
 };
 
-console.log(maxProfit([1]));
+console.log(maxProfit([2, 4, 1]));
