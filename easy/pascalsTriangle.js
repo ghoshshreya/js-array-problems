@@ -1,5 +1,5 @@
 /*----------GENERATE PASCALS' TRIANGLE----------*/
-var generate = function (numRows) {
+var generatePascalsTriangle = function (numRows) {
   const arr = [];
   if (numRows > 0) {
     arr.push([1]);
@@ -23,4 +23,4 @@ var generate = function (numRows) {
   return arr;
 };
 
-console.log(pascalsTriangle(5));
+console.log(generatePascalsTriangle(5));
