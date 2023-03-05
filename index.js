@@ -8,6 +8,7 @@ import './easy/pascalsTriangle.js';
 import './easy/sortArray.js';
 import './easy/stockbuysell.js';
 import './easy/twoSum.js';
+import './medium/mergeOverlapping.js';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
