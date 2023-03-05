@@ -3,32 +3,23 @@ var merge = function (intervals) {
   intervals.sort(function (a, b) {
     return a[0] - b[0];
   });
-
-  console.log(intervals);
-
-  for (let x = 0; x < intervals.length; x++) {
-    let ov = [intervals[x][0], intervals[x][1]];
+  let i = 0;
+  while (i < intervals.length) {
+    let count = i + 1;
+    let ov = intervals[i];
     console.log(ov);
-    let count = x;
-    for (let y = x + 1; y < intervals.length; y++) {
-      if (
-        intervals[x][0] < intervals[y][1] &&
-        intervals[x][1] > intervals[y][0]
-      ) {
-        ov[0] = intervals[x][0];
-        ov[1] = intervals[y][1];
-        count++;
-      } else {
-        break;
+    if (intervals[i + 1] !== undefined) {
+      for (let x = i + 1; x < intervals.length; x++) {
+        if (ov[0] < intervals[x][1] && ov[1] >= intervals[x][0]) {
+          ov[1] = intervals[x][1];
+          count++;
+        }
       }
     }
-
+    console.log(count);
     overlapping.push(ov);
-
-    x = count;
-    console.log(x);
+    i = count;
   }
-
   return overlapping;
 };
 
@@ -36,7 +27,7 @@ console.log(
   'Merged',
   merge([
     [1, 3],
-    [8, 16],
+    [8, 10],
     [15, 18],
     [2, 6],
   ])
