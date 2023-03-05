@@ -1,22 +1,17 @@
 var merge = function (intervals) {
-  let overlapping = [];
+  // 1. Sort the array
   intervals.sort(function (a, b) {
     return a[0] - b[0];
   });
-  let i = 0;
-  while (i < intervals.length) {
-    let count = i + 1;
-    let ov = intervals[i];
-    if (intervals[i + 1] !== undefined) {
-      for (let x = i + 1; x < intervals.length; x++) {
-        if (ov[0] < intervals[x][1] && ov[1] >= intervals[x][0]) {
-          ov[1] = Math.max(intervals[x][1], ov[1]);
-          count++;
-        }
-      }
+
+  let overlapping = [];
+  for (let i of intervals) {
+    let prev = overlapping.at(-1); // Fetching the last element
+    if (overlapping.length === 0 || prev[1] < i[0]) {
+      overlapping.push(i);
+    } else {
+      prev[1] = Math.max(prev[1], i[1]);
     }
-    overlapping.push(ov);
-    i = count;
   }
   return overlapping;
 };
@@ -24,7 +19,10 @@ var merge = function (intervals) {
 console.log(
   'Merged Overlapping --> ',
   merge([
-    [1, 4],
     [2, 3],
+    [5, 5],
+    [2, 2],
+    [3, 4],
+    [3, 4],
   ])
 );
