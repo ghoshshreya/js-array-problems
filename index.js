@@ -10,6 +10,7 @@ import './easy/stockbuysell.js';
 import './easy/twoSum.js';
 import './easy/largestElement.js';
 import './medium/mergeOverlapping.js';
+import './easy/removeDuplicates.js';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
