@@ -11,6 +11,7 @@ import './easy/twoSum.js';
 import './easy/largestElement.js';
 import './medium/mergeOverlapping.js';
 import './easy/removeDuplicates.js';
+import './easy/linearSearch.js';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
