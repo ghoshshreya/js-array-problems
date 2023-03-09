@@ -1,17 +1,16 @@
 /*
  * Input [1,2,3,4,5,6], 2
- * Output [5,6,1,2,3,4]
+ * Output [3, 4, 5, 6, 1, 2]
  */
 function leftShiftByKElements(nums, k) {
-  function leftShift(nums) {
-    let firstElem = nums.shift();
-    nums.push(firstElem);
+  function leftShift(nums, k) {
     if (k > 0) {
-      leftShift(nums);
-      k--;
+      let firstElem = nums.shift();
+      nums.push(firstElem);
+      leftShift(nums, k - 1);
     }
+    return nums;
   }
-
-  return leftShift(nums);
+  return leftShift(nums, k);
 }
-console.log('Hello', leftShiftByKElements([1, 2, 3, 4, 5, 6], 2));
+console.log('Hello 2', leftShiftByKElements([1, 2, 3, 4, 5, 6], 2));
